@@ -17,11 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     //Esse botão chama de uma página para outra
     public void submitOrder(View view){
-        Intent it = new Intent(getBaseContext(), Cardapio.class);
-        startActivity(it);
-    }
-
-    public void valortotal(View view){
         EditText name1Field = (EditText) findViewById(R.id.nome_Cliente);
         String name1 = name1Field.getText().toString();
 
@@ -34,9 +29,12 @@ public class MainActivity extends AppCompatActivity {
         EditText name4Field = (EditText) findViewById(R.id.Email_usuario);
         String name4 = name4Field.getText().toString();
 
-        Intent it = new Intent(getBaseContext(), Boleto.class);
+        Intent it = new Intent(getBaseContext(), Cardapio.class);
         it.putExtra("nome_cliente", name1);
         it.putExtra("numero_cliente", name2);
+        it.putExtra("CEP", name3);
+        it.putExtra("Email_usuario", name4);
+        startActivity(it);
         startActivity(it);
     }
 
